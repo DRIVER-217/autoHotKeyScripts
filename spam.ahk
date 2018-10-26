@@ -4,21 +4,22 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
-^sp::
+^s::
 
 	If (toggle := !toggle) {
 
-		Send, y
-		SetTimer, spam, 200
+		SetTimer, spam, 1000
 	}
 	Else {
 
 		SetTimer, spam, off
-		Send, y
+	}
 Return
 
 spam: 
-	Send, ; Insert spam before ";"
+;	Send, (replace whatever here and delete semi-colon before send)
 	Send, {Enter}
+	Sleep, 800
+
 Return
 	
